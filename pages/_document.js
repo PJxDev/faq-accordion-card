@@ -10,7 +10,7 @@ export default function Document() {
           rel="stylesheet"
         />
       <Head />
-      <body className='flex || items-center || justify-center || bg-gradient-to-t from-softBlue to-softViolet || h-screen || bg-no-repeat'>
+      <body className='bg-gradient-to-t from-softBlue to-softViolet || h-screen w-[100%] flex justify-center items-center'>
         <Main />
         <NextScript />
       </body>
