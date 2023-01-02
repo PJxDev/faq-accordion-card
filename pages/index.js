@@ -9,7 +9,7 @@ export default function Home() {
   const [oldActive, setOldActive] = useState(0);
 
   useEffect(() => {
-    const buttons = document.querySelectorAll("button");
+    const buttons = document.querySelector("section").querySelectorAll("header");
     const questions = document.querySelectorAll("h2");
     const answers = document.querySelectorAll("p");
 
@@ -17,14 +17,12 @@ export default function Home() {
       el.addEventListener("click", () => {
         questions[oldActive].style.fontWeight = "Normal";
         answers[oldActive].style.display = "none";
-        
+
         setOldActive(i);
         questions[i].style.fontWeight = "Bold";
         answers[i].style.display = "block";
         answers[i].style.position = "relative";
-        answers[i].style.transform = 'none';
-
-        
+        answers[i].style.transform = "none";
       });
     });
     return;
@@ -61,7 +59,7 @@ export default function Home() {
         </header>
         <section className="max-w-[15rem] flex flex-col gap-2 text-darkGrayishBlue text-left">
           <article className="relative">
-            <header className="flex flex-row gap-4 justify-between text-veryDarkGrayishBlue">
+            <header className="flex flex-row gap-4 justify-between text-veryDarkGrayishBlue  hover:text-softRed hover:cursor-pointer">
               <h2>How many team members can I invite?</h2>
               <button>
                 <Image alt="arrow" src={arrow} />
@@ -74,7 +72,7 @@ export default function Home() {
           </article>
           <hr className=" text-lightGrayishBlue" />
           <article>
-            <header className="flex flex-row gap-4 justify-between text-veryDarkGrayishBlue">
+            <header className="flex flex-row gap-4 justify-between text-veryDarkGrayishBlue  hover:text-softRed hover:cursor-pointer">
               <h2>What is the maximum file upload size?</h2>
               <button>
                 <Image alt="arrow" src={arrow} />
@@ -87,7 +85,7 @@ export default function Home() {
           </article>
           <hr className=" text-lightGrayishBlue" />
           <article>
-            <header className="flex flex-row gap-4 justify-between text-veryDarkGrayishBlue">
+            <header className="flex flex-row gap-4 justify-between text-veryDarkGrayishBlue  hover:text-softRed hover:cursor-pointer">
               <h2>How do I reset my password?</h2>
               <button>
                 <Image alt="arrow" src={arrow} />
@@ -100,7 +98,7 @@ export default function Home() {
           </article>
           <hr className=" text-lightGrayishBlue" />
           <article>
-            <header className="flex flex-row gap-4 justify-between text-veryDarkGrayishBlue">
+            <header className="flex flex-row gap-4 justify-between text-veryDarkGrayishBlue  hover:text-softRed hover:cursor-pointer">
               <h2>Can I cancel my subscription?</h2>
               <button>
                 <Image alt="arrow" src={arrow} />
@@ -113,7 +111,7 @@ export default function Home() {
           </article>
           <hr className=" text-lightGrayishBlue" />
           <article>
-            <header className="flex flex-row gap-4 justify-between text-veryDarkGrayishBlue">
+            <header className="flex flex-row gap-4 justify-between text-veryDarkGrayishBlue  hover:text-softRed hover:cursor-pointer">
               <h2>Do you provide additional support?</h2>
               <button>
                 <Image alt="arrow" src={arrow} />
