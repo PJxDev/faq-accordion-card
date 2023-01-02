@@ -3,8 +3,33 @@ import Image from "next/image";
 import img1 from "../images/illustration-woman-online-mobile.svg";
 import sha1 from "../images/bg-pattern-mobile.svg";
 import arrow from "../images/icon-arrow-down.svg";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [oldActive, setOldActive] = useState(0);
+
+  useEffect(() => {
+    const buttons = document.querySelectorAll("button");
+    const questions = document.querySelectorAll("h2");
+    const answers = document.querySelectorAll("p");
+
+    buttons.forEach((el, i) => {
+      el.addEventListener("click", () => {
+        questions[oldActive].style.fontWeight = "Normal";
+        answers[oldActive].style.display = "none";
+        
+        setOldActive(i);
+        questions[i].style.fontWeight = "Bold";
+        answers[i].style.display = "block";
+        answers[i].style.position = "relative";
+        answers[i].style.transform = 'none';
+
+        
+      });
+    });
+    return;
+  }, [oldActive]);
+
   return (
     <>
       <Head>
@@ -18,23 +43,23 @@ export default function Home() {
         />
         <title>Frontend Mentor | FAQ Accordion Card</title>
       </Head>
-      <main className=" bg-[white] || text-xs text-center font-body || m-4 max-w-5xl min-w-fit rounded-lg p-4 || flex flex-col justify-center items-center gap-2">
+      <main className=" bg-[white] || text-xs text-center font-body || m-4 max-w-5xl min-w-fit rounded-2xl p-4 pt-8 pb-10  || flex flex-col justify-center items-center gap-2">
         <header className="relative pt-16">
           <Image
             alt="Woman with a blackboard"
             src={img1}
-            className="absolute -top-12 scale-[300%]"
+            className="absolute -top-16 scale-[300%]"
           />
           <Image
             alt="Shadow of the picture"
             src={sha1}
-            className="absolute top-2 scale-[300%]"
+            className="absolute -top-2 scale-[300%]"
           />
           <h1 className="text-2xl font-bold text-veryDarkDesaturatedBlue">
             FAQ
           </h1>
         </header>
-        <section className="flex flex-col gap-2 text-darkGrayishBlue">
+        <section className="max-w-[15rem] flex flex-col gap-2 text-darkGrayishBlue text-left">
           <article className="relative">
             <header className="flex flex-row gap-4 justify-between text-veryDarkGrayishBlue">
               <h2>How many team members can I invite?</h2>
@@ -42,7 +67,7 @@ export default function Home() {
                 <Image alt="arrow" src={arrow} />
               </button>
             </header>
-            <p className="absolute scale-0">
+            <p className="absolute scale-0 w-fit">
               You can invite up to 2 additional users on the Free plan. There is
               no limit on team members for the Premium plan.
             </p>
