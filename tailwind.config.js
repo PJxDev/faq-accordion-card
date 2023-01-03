@@ -5,6 +5,10 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      'sm': { 'max': '767px' },
+      'md': '768px',
+    },
     colors: {
       veryDarkDesaturatedBlue: "hsl(238, 29%, 16%)",
       softRed: "hsl(14, 88%, 65%)",
