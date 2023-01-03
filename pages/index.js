@@ -60,7 +60,7 @@ export default function Home() {
           <Image
             alt="Woman with a blackboard"
             src={img2}
-            className="absolute sm:scale-0 sm:top-[-8.5rem] md:scale-75"
+            className="sm:absolute sm:scale-0 sm:top-[-8.5rem] md:absolute md:scale-125 md:right-14 "
           />
           <Image
             alt="Shadow of the picture"
@@ -70,12 +70,12 @@ export default function Home() {
           <Image
             alt="Shadow of the picture"
             src={sha2}
-            className="sm:absolute sm:scale-0 sm:-top-8 md:relative md:scale-75 md:bottom-28 md:right-8"
+            className="sm:absolute sm:scale-0 sm:-top-8 md:absolute md:scale-50 md:bottom-28 md:right-8"
           />
           <Image
             alt="Shadow of the picture"
             src={box}
-            className="sm:absolute sm:scale-0 md:absolute md:scale-50 top-32 left-4"
+            className="sm:absolute sm:scale-0 md:relative md:scale-50 top-0 right-36"
           />
         </header>
         <section className="max-w-[15rem] flex flex-col gap-2 text-darkGrayishBlue text-left">
